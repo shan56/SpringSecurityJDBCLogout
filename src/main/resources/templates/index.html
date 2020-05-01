@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2> It Works! </h2>
+<p>Hello, [[${user}]]</p>
+
+<form action="/logout" method="post">
+    <input type="hidden"
+           name="${_csrf.parameterName}"}
+           value="${_csrf.token}"/>
+    <input type="submit" value="Logout">
+</form>
+</body>
+</html>
