@@ -27,13 +27,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout()
                 .logoutSuccessUrl("/login?logout=true")
-                .invalidateHttpSession(true)
-                .permitAll()
-                .and()
-                .csrf()
-                .disable();
+                .permitAll();
 
     }
+    
+    /*
+    Using the autoconfigured DataSource. The withDefaultSchema directive adds a database secript
+    that will populate the default schema (for users and authorities), allowing users and authorities to be stored.
+    Finally, creating a default user & admin entry in the database with encripted password.
+     */
 
     @Autowired
     private DataSource dataSource;

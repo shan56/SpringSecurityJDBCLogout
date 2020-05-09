@@ -8,10 +8,10 @@
 <h2> It Works! </h2>
 <p>Hello, [[${user}]]</p>
 
-<form action="/logout" method="post">
-    <input type="hidden"
-           name="${_csrf.parameterName}"}
-           value="${_csrf.token}"/>
+<form th:action="@{/doLogout}" method="post">
+<!--    <input type="hidden"-->
+<!--           name="${_csrf.parameterName}"}-->
+<!--           value="${_csrf.token}"/>-->
     <input type="submit" value="Logout">
 </form>
 </body>
